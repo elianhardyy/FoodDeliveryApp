@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FoodDeliveryApp2</string>
+    <string name="login_hyperlink"><a>Login</a></string>
+</resources>
