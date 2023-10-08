@@ -33,7 +33,6 @@ class HomeActivity : AppCompatActivity() {
         btnLogout.setOnClickListener {
             mAuth.signOut()
             startActivity(Intent(this,MainActivity::class.java))
-            finish()
         }
 
         reference.child(userId).addListenerForSingleValueEvent(object : ValueEventListener{
