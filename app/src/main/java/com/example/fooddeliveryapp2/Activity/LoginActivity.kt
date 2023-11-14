@@ -1,4 +1,4 @@
-package com.example.fooddeliveryapp2
+package com.example.fooddeliveryapp2.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.fooddeliveryapp2.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -18,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var mauth : FirebaseAuth
     private lateinit var etEmail : TextInputEditText
     private lateinit var etPassword : TextInputEditText
-    private lateinit var btnSubmit : Button
+    private lateinit var btnSubmit : ConstraintLayout
     private lateinit var emailLayout : TextInputLayout
     private lateinit var passwordLayout : TextInputLayout
     private lateinit var tvForgotPassword : TextView
@@ -29,15 +31,15 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         etEmail = findViewById(R.id.inputemailLogin)
         etPassword = findViewById(R.id.inputpasswordLogin)
-        btnSubmit = findViewById(R.id.btnSubmitLogin)
+        btnSubmit = findViewById(R.id.btnLoginConstraint)
         tvRegister = findViewById(R.id.tvRegister)
         tvWarning = findViewById(R.id.tvWarning)
         tvForgotPassword = findViewById(R.id.tvForgotPassword)
         tvRegister.setOnClickListener {
-            startActivity(Intent(this,AuthActivity::class.java))
+            startActivity(Intent(this, AuthActivity::class.java))
         }
         tvForgotPassword.setOnClickListener {
-            startActivity(Intent(this,ForgotPasswordActivity::class.java))
+            startActivity(Intent(this, ForgotPasswordActivity::class.java))
         }
         btnSubmit.setOnClickListener {
             val email = etEmail.text.toString()
@@ -55,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 if(it.isSuccessful){
                     finish()
                     Toast.makeText(this,"Authentication succesfull",Toast.LENGTH_LONG).show()
-                    val intent = Intent(this,HomeActivity::class.java)
+                    val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 }else{
                     tvWarning.visibility = View.VISIBLE

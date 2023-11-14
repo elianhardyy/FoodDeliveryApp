@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".Activity.LoginActivity">
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
@@ -103,28 +103,39 @@
         app:layout_constraintTop_toBottomOf="@id/tvWarning"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/btnSubmitLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginEnd="155dp"
-        android:text="submit"
-        android:textAllCaps="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLayoutLogin"
-        tools:ignore="MissingConstraints" />
-
     <TextView
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="60dp"
         android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSubmitLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginConstraint" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnLoginConstraint"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/btn_rounded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLayoutLogin">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/suez_one"
+            android:text="login"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

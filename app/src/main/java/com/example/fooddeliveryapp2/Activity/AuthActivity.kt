@@ -1,4 +1,4 @@
-package com.example.fooddeliveryapp2
+package com.example.fooddeliveryapp2.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,9 +8,11 @@ import android.util.Patterns
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.fooddeliveryapp2.R
+import com.example.fooddeliveryapp2.User
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import com.google.android.play.core.integrity.IntegrityTokenRequest
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
@@ -24,7 +26,7 @@ class AuthActivity : AppCompatActivity() {
     private lateinit var etEmail: TextInputEditText
     private lateinit var etPassword: TextInputEditText
     private lateinit var etPasswordConfirm : TextInputEditText
-    private lateinit var btnSubmit : Button
+    private lateinit var btnSubmit : ConstraintLayout
     private lateinit var usernameLayout: TextInputLayout
     private lateinit var addressLayout: TextInputLayout
     private lateinit var emailLayout : TextInputLayout
@@ -39,10 +41,10 @@ class AuthActivity : AppCompatActivity() {
         etAddress = findViewById(R.id.inputaddress)
         etEmail = findViewById<TextInputEditText>(R.id.inputemail)
         etPassword = findViewById(R.id.inputpassword)
-        btnSubmit = findViewById(R.id.btnSubmitRegist)
+        btnSubmit = findViewById(R.id.btnRegistConstraint)
         tvLogin = findViewById(R.id.tvLogin)
         tvLogin.setOnClickListener {
-            val intent = Intent(this,LoginActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
         dbRef = FirebaseDatabase.getInstance().getReference("Users")
@@ -76,7 +78,7 @@ class AuthActivity : AppCompatActivity() {
                     etEmail.text?.clear()
                     etPassword.text?.clear()
                     etPasswordConfirm.text?.clear()
-                    startActivity(Intent(this,LoginActivity::class.java))
+                    startActivity(Intent(this, LoginActivity::class.java))
                     finish()
                 }else{
                     Log.e("error",it.exception.toString())

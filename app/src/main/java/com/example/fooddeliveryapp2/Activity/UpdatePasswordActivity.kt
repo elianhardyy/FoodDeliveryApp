@@ -1,10 +1,11 @@
-package com.example.fooddeliveryapp2
+package com.example.fooddeliveryapp2.Activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.example.fooddeliveryapp2.R
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -34,7 +35,7 @@ class UpdatePasswordActivity : AppCompatActivity() {
         user!!.updatePassword(password).addOnCompleteListener {
             if(it.isSuccessful){
                 Toast.makeText(this,"Update password success",Toast.LENGTH_LONG).show()
-                startActivity(Intent(this,LoginActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }else{
                 Toast.makeText(this,"Update password is failed",Toast.LENGTH_LONG).show()

@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AuthActivity">
+    tools:context=".Activity.AuthActivity">
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
-        android:layout_marginTop="82dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="105dp"
         android:text="registration form"
         android:textAllCaps="true"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -121,19 +122,18 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordconfirmLayout"
-        app:startIconDrawable="@drawable/password_icon"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="80dp"
         android:hint="Confirm Password"
+        app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
-        tools:ignore="MissingConstraints"
-        app:endIconMode="password_toggle"
-        >
+        app:startIconDrawable="@drawable/password_icon"
+        tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputpasswordconfirm"
@@ -146,28 +146,38 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btnSubmitRegist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="155dp"
-        android:text="submit"
-        android:textAllCaps="true"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnRegistConstraint"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/btn_rounded"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordconfirmLayout"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordconfirmLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/suez_one"
+            android:text="Register"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:text="@string/login_hyperlink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSubmitRegist" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistConstraint" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
